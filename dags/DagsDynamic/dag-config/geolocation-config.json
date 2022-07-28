@@ -1,0 +1,19 @@
+{
+    "DagId": "GeoLocation_Automated",
+    "t1": "GetAndInsertApiDataGeoLocation",
+    "t2": "CreateJoinTableOfGeoLocation",
+    "URL-HERE": "http://58.65.177.12/api_who/api/get_alllocation/5468XE2LN6CzR7qRG041",
+    "query-create-api_table": " Create Table if not exists test.get_geolocation (ID Int32, code Nullable(Int32), name String, type String, location_target Int32, location_status Int32, location_priority String, hr_status String)ENGINE = MergeTree PRIMARY KEY ID ORDER BY ID",
+    "query-get-api_table": "SELECT * FROM test.get_geolocation",
+    "query-insert-into_api_table": "INSERT INTO test.get_geolocation VALUES",
+    "query-create-xbi_table": "CREATE TABLE if not exists test.xbi_geolocation (ID Int32, code Nullable(Int32), name String, type String, location_target Int32, location_status Int32, location_priority String, hr_status String)ENGINE = MergeTree PRIMARY KEY ID ORDER BY ID",
+    "xbi_columns-names": "test.get_geolocation.ID, test.get_geolocation.code, test.get_geolocation.name, test.get_geolocation.type, test.get_geolocation.location_target, test.get_geolocation.location_status, test.get_geolocation.location_priority, test.get_geolocation.hr_status ",
+    "query-joined_table": " FROM test.get_geolocation",
+    "all-column-names": "'ID', 'code', 'name', 'type', 'location_target', 'location_status','location_priority','hr_status' ",
+    "query-get-xbi_table": "SELECT * FROM test.xbi_geolocation",
+    "query-insert-xbi_table": "INSERT INTO test.xbi_geolocation  VALUES",
+    "query-drop-api_table": "DROP table if exists test.get_geolocation",
+    "query-drop-xbi_table": "DROP TABLE test.xbi_geolocation",
+    "primary-key": "ID",
+    "logger-file_name":"GeoLocation.log"
+}

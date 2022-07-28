@@ -1,0 +1,19 @@
+{
+    "DagId": "Campaign_Automated",
+    "t1": "GetAndInsertApiDataCampaign",
+    "t2": "CreateJoinTableOfCampaign",
+    "URL-HERE": "http://58.65.177.12/api_who/api/get_allactivity/Al68XE2L3N6CzR7qRR1",
+    "query-create-api_table": " Create Table if not exists test.get_campaign (ID Int32, ActivityName String, ActivityID_old Int32, Yr Int32, SubActivityName String)ENGINE = MergeTree PRIMARY KEY ID ORDER BY ID",
+    "query-get-api_table": "SELECT * FROM test.get_campaign",
+    "query-insert-into_api_table": "INSERT INTO test.get_campaign VALUES",
+    "query-create-xbi_table": "CREATE TABLE if not exists test.xbi_campaign (campaign_ID Int32, campaign_ActivityName String, campaign_ActivityID_old Int32, campaign_Yr Int32, campaign_SubActivityName String)ENGINE = MergeTree PRIMARY KEY campaign_ID ORDER BY campaign_ID",
+    "xbi_columns-names": "test.get_campaign.ID, test.get_campaign.ActivityName, test.get_campaign.ActivityID_old, test.get_campaign.Yr, test.get_campaign.SubActivityName ",
+    "query-joined_table": " FROM test.get_campaign campn ",
+    "all-column-names": "'campaign_ID', 'campaign_ActivityName', 'campaign_ActivityID_old', 'campaign_Yr', 'campaign_SubActivityName' ",
+    "query-get-xbi_table": "SELECT * FROM test.xbi_campaign",
+    "query-insert-xbi_table": "INSERT INTO test.xbi_campaign  VALUES",
+    "query-drop-api_table": "DROP table if exists test.get_campaign",
+    "query-drop-xbi_table": "DROP TABLE test.xbi_campaign",
+    "primary-key": "campaign_ID",
+    "logger-file_name":"Campaign.log"
+}
